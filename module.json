@@ -1,7 +1,7 @@
 {
-  "id": "module-template",
-  "title": "Module Template",
-  "description": "A module template, this should have been changed",
+  "id": "macro-executor",
+  "title": "Macro Executor",
+  "description": "A simple module for Foundry VTT to add a button to execute macros directly from the macro directory application",
   "version": "#{VERSION}#",
   "library": "false",
   "compatibility": {

@@ -180,66 +180,6 @@ if (buildResults.errors.length) {
   // if (buildResults.warnings.length) console.warn(buildResults.warnings);
 }
 
-// Types
-if (!__DEV__ || (__DEV__ && !process.argv.slice(2).includes("--no-types"))) {
-  const typeStart = Date.now();
-  if (!process.env.GITHUB_ACTIONS)
-    spinner = yoctoSpinner({ text: "Generating type declarations..." }).start();
-  else console.log("Generating type declarations...");
-  try {
-    await fs.rm("./types", { recursive: true, force: true });
-
-    const currentDir = process.cwd();
-    const configFile = ts.findConfigFile(
-      currentDir,
-      ts.sys.fileExists,
-      "tsconfig.json"
-    );
-    if (!configFile) throw new Error("tsconfig.json not found");
-    const { config } = ts.readConfigFile(configFile, ts.sys.readFile);
-
-    config.compilerOptions.declaration = true;
-    config.compilerOptions.declarationDir = "types";
-    config.compilerOptions.emitDeclarationOnly = true;
-    // config.compilerOptions.outFile = "./dist/index.d.ts";
-
-    const { options, fileNames, errors } = ts.parseJsonConfigFileContent(
-      config,
-      ts.sys,
-      currentDir
-    );
-    const program = ts.createProgram({
-      options,
-      rootNames: fileNames,
-      configFileParsingDiagnostics: errors,
-    });
-    const { diagnostics, emitSkipped } = program.emit();
-    const allDiagnostics = ts
-      .getPreEmitDiagnostics(program)
-      .concat(diagnostics, errors);
-
-    if (spinner)
-      spinner.success(
-        `Type declarations emitted in ${(
-          (Date.now() - buildStart) /
-          1000
-        ).toFixed(2)}s`
-      );
-    else
-      console.log(
-        `Type declarations emitted in ${(
-          (Date.now() - buildStart) /
-          1000
-        ).toFixed(2)}s`
-      );
-  } catch (err) {
-    if (spinner) spinner.error("Type declaration generation failed!");
-    else console.error("Type declaration generation failed!");
-    console.error(err);
-    process.exit();
-  }
-}
-
 // Pack compendia
 const packStart = Date.now();
 if (!process.env.GITHUB_ACTIONS)
