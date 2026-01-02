@@ -1,0 +1,9 @@
+{
+  "MACRO-EXECUTOR": {
+    "ERRORS": {
+      "MACRONOTFOUND": "Macro {id} not found",
+      "PACKNOTFOUND": "Compendium pack {id} not found",
+      "PERMISSIONDENIED": "Permission denied"
+    }
+  }
+}

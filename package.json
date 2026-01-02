@@ -1,5 +1,5 @@
 {
-  "name": "foundryvtt-module-template",
+  "name": "foundryvtt-easy-macro-execution",
   "version": "1.0.0",
   "description": "",
   "main": "dist/module.js",
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Unarekin/FoundryVTT-Module-Template.git"
+    "url": "git+https://github.com/Unarekin/FoundryVTT-Easy-Macro-Execution.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "types": "./types/module.d.ts",
   "bugs": {
-    "url": "https://github.com/Unarekin/FoundryVTT-Module-Template/issues"
+    "url": "https://github.com/Unarekin/FoundryVTT-Easy-Macro-Execution/issues"
   },
-  "homepage": "https://github.com/Unarekin/FoundryVTT-Module-Template#readme",
+  "homepage": "https://github.com/Unarekin/FoundryVTT-Easy-Macro-Execution#readme",
   "devDependencies": {
     "@eslint/js": "^9.11.0",
     "@foundryvtt/foundryvtt-cli": "^1.1.0",

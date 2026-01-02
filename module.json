@@ -1,13 +1,13 @@
 {
-  "id": "module-template",
-  "title": "Module Template",
-  "description": "A module template, this should have been changed",
+  "id": "easy-macro-execution",
+  "title": "Easy Macro Execution",
+  "description": "A simple module for Foundry VTT to add a button to execute macros directly from the macro directory application",
   "version": "#{VERSION}#",
   "library": "false",
   "compatibility": {
     "minimum": 13,
-    "verified": 13,
-    "maximum": 13
+    "verified": 14,
+    "maximum": 14
   },
   "authors": [
     {
