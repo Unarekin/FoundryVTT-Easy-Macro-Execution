@@ -180,32 +180,32 @@ if (buildResults.errors.length) {
   // if (buildResults.warnings.length) console.warn(buildResults.warnings);
 }
 
-// Pack compendia
-const packStart = Date.now();
-if (!process.env.GITHUB_ACTIONS)
-  spinner = yoctoSpinner({ text: "Packing compendia..." }).start();
-else console.log("Packing compendia...");
-try {
-  // Build compendia
-  const packs = await fs.readdir(path.join(SRC_PATH, "packs"));
-  for (const pack of packs) {
-    if (pack === ".gitattributes") continue;
-    await compilePack(
-      path.join(SRC_PATH, `packs`, pack),
-      path.join(OUT_PATH, "packs", pack),
-      { yaml: false }
-    );
-  }
-  if (spinner)
-    spinner.success(
-      `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`
-    );
-  else
-    console.log(
-      `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`
-    );
-} catch (err) {
-  if (spinner) spinner.error("Build failed!");
-  else console.error("Build failed!");
-  console.error(err);
-}
+// // Pack compendia
+// const packStart = Date.now();
+// if (!process.env.GITHUB_ACTIONS)
+//   spinner = yoctoSpinner({ text: "Packing compendia..." }).start();
+// else console.log("Packing compendia...");
+// try {
+//   // Build compendia
+//   const packs = await fs.readdir(path.join(SRC_PATH, "packs"));
+//   for (const pack of packs) {
+//     if (pack === ".gitattributes") continue;
+//     await compilePack(
+//       path.join(SRC_PATH, `packs`, pack),
+//       path.join(OUT_PATH, "packs", pack),
+//       { yaml: false }
+//     );
+//   }
+//   if (spinner)
+//     spinner.success(
+//       `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`
+//     );
+//   else
+//     console.log(
+//       `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`
+//     );
+// } catch (err) {
+//   if (spinner) spinner.error("Build failed!");
+//   else console.error("Build failed!");
+//   console.error(err);
+// }
