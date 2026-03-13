@@ -1,7 +1,7 @@
 {
   "name": "foundryvtt-easy-macro-execution",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "A simple module for Foundry VTT to add a button to execute macros directly from the macro directory application",
   "main": "dist/module.js",
   "scripts": {
     "build": "node build.mjs",
