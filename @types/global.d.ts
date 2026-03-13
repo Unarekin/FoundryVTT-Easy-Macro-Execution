@@ -3,15 +3,14 @@ declare module '*.scss';
 
 declare const __DEV__: boolean;
 declare const __MODULE_TITLE__: string;
-const __MODULE_ID__ = "macro-executor";
+const __MODULE_ID__ = "easy-macro-execution";
 declare const __MODULE_VERSION__: string;
 
 
 
-
-interface SettingConfig {
-  [__MODULE_ID__]: {
-    addToListItem: boolean;
-    addToContextMenu: boolean;
+declare global {
+  interface SettingConfig {
+    "easy-macro-execution.addToListItem": boolean;
+    "easy-macro-execution.addToContextMenu": boolean;
   }
 }

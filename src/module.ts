@@ -4,6 +4,7 @@ import { LocalizedError } from "errors";
 import "./settings";
 
 Hooks.on("getMacroContextOptions", (app: MacroDirectory, entries: foundry.applications.ux.ContextMenu.Entry<HTMLLIElement>[]) => {
+  if (app instanceof foundry.applications.ui.Hotbar) return;
   entries.push({
     name: "MACRO.Execute",
     icon: `<i class="fa-solid fa-fw fa-play"></i>`,
